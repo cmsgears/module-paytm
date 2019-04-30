@@ -1,0 +1,23 @@
+{
+	"name": "cmsgears/module-paytm",
+	"description": "The Paytm Module required for the projects which need Paytm to handle payments.",
+	"homepage": "http://www.cmsgears.org",
+	"type": "package",
+	"keywords": [ "yii2", "cmsgears", "module", "paytm" ],
+	"license": "GPL-3.0-or-later",
+	"support": {
+		"resources": "http://www.cmsgears.org"
+	},
+	"autoload": {
+		"psr-4": {
+			"cmsgears\\paytm\\": ""
+		}
+	},
+    "require": {
+		"ext-curl": "*",
+    	"ext-json": "*",
+        "cmsgears/module-core": "*",
+		"cmsgears/module-payment": "*",
+        "cmsgears/module-cart": "*"
+    }
+}
