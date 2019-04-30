@@ -76,9 +76,12 @@ class m160623_021950_paytm_data extends \cmsgears\core\common\base\Migration {
 		$columns = [ 'formId', 'name', 'label', 'type', 'compress', 'meta', 'active', 'validators', 'order', 'icon', 'htmlOptions' ];
 
 		$fields	= [
+			[ $config->id, 'status', 'Status', FormField::TYPE_SELECT, false, true, true, 'required', 0, NULL, '{"title":"Status","items":{"staging":"Staging","production":"Production"}}' ],
 			[ $config->id, 'payments', 'Payments', FormField::TYPE_TOGGLE, false, true, true, 'required', 0, NULL, '{"title":"Payments Enabled"}' ],
-			[ $config->id, 'mid_staging', 'Staging MID', FormField::TYPE_TEXT, false, true, true, 'required', 0, NULL, '{"title":"Staging MID","placeholder":"Staging MID"}' ],
-			[ $config->id, 'mid_production', 'Production MID', FormField::TYPE_TEXT, false, true, true, 'required', 0, NULL, '{"title":"Production MID","placeholder":"Production MID"}' ],
+			[ $config->id, 'mid_staging', 'Staging ID', FormField::TYPE_TEXT, false, true, true, 'required', 0, NULL, '{"title":"Staging MID","placeholder":"Staging MID"}' ],
+			[ $config->id, 'mid_production', 'Production ID', FormField::TYPE_TEXT, false, true, true, 'required', 0, NULL, '{"title":"Production MID","placeholder":"Production MID"}' ],
+			[ $config->id, 'key_staging', 'Staging Key', FormField::TYPE_PASSWORD, false, true, true, 'required', 0, NULL, '{"title":"Staging Key","placeholder":"Staging Key"}' ],
+			[ $config->id, 'key_production', 'Production Key', FormField::TYPE_PASSWORD, false, true, true, 'required', 0, NULL, '{"title":"Production Key","placeholder":"Production Key"}' ],
 			[ $config->id, 'website_staging', 'Staging Website', FormField::TYPE_TEXT, false, true, true, 'required', 0, NULL, '{"title":"Staging Website","placeholder":"Staging Website"}' ],
 			[ $config->id, 'website_production', 'Production Website', FormField::TYPE_TEXT, false, true, true, 'required', 0, NULL, '{"title":"Production Website","placeholder":"Production Website"}' ],
 			[ $config->id, 'industry_staging', 'Staging Industry', FormField::TYPE_TEXT, false, true, true, 'required', 0, NULL, '{"title":"Staging Industry","placeholder":"Staging Industry"}' ],
@@ -98,9 +101,12 @@ class m160623_021950_paytm_data extends \cmsgears\core\common\base\Migration {
 		$columns = [ 'modelId', 'name', 'label', 'type', 'active', 'valueType', 'value', 'data' ];
 
 		$attributes	= [
+			[ $this->site->id, 'status', 'Status', 'paytm', 1, 'text', NULL, NULL ],
 			[ $this->site->id, 'payments', 'Payments', 'paytm', 1, 'flag', '0', NULL ],
-			[ $this->site->id, 'mid_staging', 'Staging MID', 'paytm', 1, 'text', NULL, NULL ],
-			[ $this->site->id, 'mid_production', 'Production MID', 'paytm', 1, 'text', NULL, NULL ],
+			[ $this->site->id, 'mid_staging', 'Staging ID', 'paytm', 1, 'text', NULL, NULL ],
+			[ $this->site->id, 'mid_production', 'Production ID', 'paytm', 1, 'text', NULL, NULL ],
+			[ $this->site->id, 'key_staging', 'Staging Key', 'paytm', 1, 'text', NULL, NULL ],
+			[ $this->site->id, 'key_production', 'Production Key', 'paytm', 1, 'text', NULL, NULL ],
 			[ $this->site->id, 'website_staging', 'Staging Website', 'paytm', 1, 'text', NULL, NULL ],
 			[ $this->site->id, 'website_production', 'Production Website', 'paytm', 1, 'text', NULL, NULL ],
 			[ $this->site->id, 'industry_staging', 'Staging Industry', 'paytm', 1, 'text', NULL, NULL ],
